@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalPulse Digital – Montage vidéo et retouche photo pour commerces locaux</title>
+<meta name="description" content="Vidéos verticales (Reels, TikTok, Shorts) et photos retouchées pour restaurants, hôtels et producteurs. 100 % à distance, à partir de 96 € TTC la vidéo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF9FF;--ink:#15131F;--mute:#5E5A72;--pulse:#FF2E63;--violet:#4F3BFF;--soft:#ECE9FF;--line:#DAD6F0;--r:18px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque","Arial Black",sans-serif;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(30px,5vw,46px);font-weight:800;margin-bottom:14px}
+.lead{color:var(--mute);max-width:560px;margin-bottom:36px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;font:600 16px "Instrument Sans",sans-serif;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.pulse{background:var(--pulse);border-color:var(--pulse)}
+.btn.ghost{background:transparent;color:var(--ink)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none}
+.logo b{color:var(--pulse)}
+nav a.btn{padding:10px 20px;font-size:15px}
+/* hero */
+.hero{display:grid;gap:40px;padding:36px 0 72px;align-items:center}
+.hero h1{font-size:clamp(40px,8vw,72px);font-weight:800}
+.hero p{color:var(--mute);font-size:19px;margin:20px 0 28px;max-width:480px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.phones{display:flex;justify-content:center;gap:14px;align-items:flex-end}
+.phone{width:30%;max-width:170px;text-align:center;font-size:14px;color:var(--mute)}
+.phone:nth-child(2){transform:translateY(-22px)}
+.reel{position:relative;aspect-ratio:9/16;border-radius:22px;border:5px solid var(--ink);overflow:hidden;margin-bottom:8px;box-shadow:0 18px 30px -18px rgba(21,19,31,.5)}
+.reel::before{content:"";position:absolute;inset:-20%;background:var(--g);animation:pan 4s ease-in-out infinite alternate}
+.r1{--g:radial-gradient(circle at 30% 30%,#FFB347,#FF2E63 60%,#6A1B4D)}
+.r2{--g:radial-gradient(circle at 70% 25%,#7CE0D3,#4F3BFF 60%,#1B1A4E)}
+.r3{--g:radial-gradient(circle at 40% 70%,#FFE27A,#E8742C 55%,#5A2A12)}
+.sub{position:absolute;left:0;right:0;bottom:22%;text-align:center}
+.sub span{position:absolute;left:0;right:0;opacity:0;font:800 clamp(15px,3.4vw,24px) "Bricolage Grotesque",sans-serif;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.35);animation:word 4s infinite;animation-delay:calc(var(--i)*1s)}
+.bar{position:absolute;left:0;bottom:0;height:5px;background:#fff;animation:bar 4s linear infinite}
+@keyframes pan{to{transform:scale(1.25) rotate(4deg)}}
+@keyframes word{0%,24%{opacity:1;transform:scale(1.12)}25%,100%{opacity:0}}
+@keyframes bar{from{width:0}to{width:100%}}
+/* steps */
+.steps{display:grid;gap:16px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;position:relative}
+.step::before{counter-increment:s;content:counter(s);font:800 34px "Bricolage Grotesque",sans-serif;color:var(--pulse);display:block;margin-bottom:6px}
+.step h3{font-size:22px;margin-bottom:6px}
+.step p{color:var(--mute);font-size:16px}
+/* prices */
+.packs{display:grid;gap:16px}
+.pack{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column}
+.pack.best{border:2px solid var(--violet);background:var(--soft)}
+.pack h3{font-size:26px}
+.price{font:800 44px "Bricolage Grotesque",sans-serif;margin:8px 0}
+.pack .what{font-weight:600;margin-bottom:10px}
+.pack ul{list-style:none;padding:0;color:var(--mute);font-size:16px;margin-bottom:22px;flex:1}
+.pack li{padding:3px 0 3px 22px;position:relative}
+.pack li::before{content:"✓";position:absolute;left:0;color:var(--violet);font-weight:700}
+.tag{align-self:flex-start;background:var(--violet);color:#fff;font-size:14px;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:10px}
+.calc{margin-top:16px;background:var(--ink);color:#fff;border-radius:var(--r);padding:28px;display:grid;gap:20px}
+.calc h3{font-size:26px}
+.calc label{display:flex;justify-content:space-between;font-weight:500;margin-bottom:6px}
+.calc input[type=range]{width:100%;accent-color:var(--pulse)}
+.calc .tot{font:800 40px "Bricolage Grotesque",sans-serif}
+.calc small{color:#B9B5D6;display:block;margin-top:10px}
+.calc small a{color:#fff}
+.price small{font:600 16px "Instrument Sans",sans-serif;color:var(--mute)}
+.ht{color:var(--mute);font-size:14px;margin:-4px 0 10px}
+[hidden]{display:none!important}
+.navr{display:flex;gap:8px}
+dialog{border:0;border-radius:var(--r);padding:28px;width:min(420px,92vw);max-height:90vh;overflow:auto;color:var(--ink);background:#fff;margin:auto}
+dialog::backdrop{background:rgba(21,19,31,.6)}
+dialog h3{font-size:26px;margin-bottom:14px;padding-right:30px}
+.x{position:absolute;top:10px;right:14px;border:0;background:none;font-size:30px;cursor:pointer;color:var(--mute)}
+.tabs{display:flex;gap:6px;margin-bottom:16px}
+.tabs button{flex:1;padding:9px 4px;border:1.5px solid var(--line);border-radius:999px;background:#fff;font:600 14px "Instrument Sans",sans-serif;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.am{font-weight:600;min-height:24px;margin-top:12px;font-size:15px}
+.ul{list-style:none;padding:0;margin:10px 0 16px;font-size:15px}
+.ul li{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.ul button{border:0;background:none;color:var(--pulse);font-weight:600;cursor:pointer}
+/* contact */
+form{display:grid;gap:14px;max-width:560px}
+input,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:400 16px "Instrument Sans",sans-serif;color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+#msg{font-weight:600;min-height:24px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:15px}
+footer a{color:var(--violet)}
+.eyebrow{display:inline-block;background:var(--soft);color:var(--violet);font-weight:600;font-size:15px;padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.gal{display:grid;gap:16px}
+.gal figure{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.gal video{width:100%;aspect-ratio:9/16;background:#000;display:block}
+.gal figcaption{padding:12px 16px;font-size:15px;color:var(--mute)}
+.launch{background:var(--soft);border:2px dashed var(--violet);border-radius:var(--r);padding:28px}
+.launch h3{font-size:26px;margin-bottom:8px}
+.launch p{color:var(--mute);margin-bottom:18px;max-width:560px}
+.tips{display:grid;gap:12px;list-style:none;padding:0}
+.tips li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;font-size:16px}
+.tips b{display:block;font:800 18px "Bricolage Grotesque",sans-serif}
+.note{font-size:14px;color:var(--mute);max-width:560px}
+.leg h3{font-size:22px;margin:18px 0 6px}.leg p{font-size:15px;color:var(--mute);margin-bottom:6px}
+dialog.big{width:min(640px,94vw)}
+@media(min-width:800px){.gal{grid-template-columns:repeat(3,1fr)}.tips{grid-template-columns:repeat(4,1fr)}
+.hero{grid-template-columns:1.1fr 1fr}
+.steps,.packs{grid-template-columns:repeat(3,1fr)}
+.calc{grid-template-columns:1fr 1fr;align-items:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.sub span:first-child{opacity:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">Local<b>Pulse</b></a><div class="navr"><a class="btn ghost" href="#contact">Nous écrire</a><button class="btn" id="open" type="button">Mon espace</button></div></nav>
+
+<header class="hero">
+<div>
+<span class="eyebrow">Basé en Dordogne · pour les commerces d’ici</span>
+<h1>Vos vidéos et photos, montées pour qu’on les regarde.</h1>
+<p>Vous filmez avec votre téléphone, on s’occupe du reste : montage dynamique, sous-titres, musique et retouche photo. Pour restaurants, hôtels, producteurs et commerces.</p>
+<div class="cta"><a class="btn pulse" href="#tarifs">Voir les tarifs</a><a class="btn ghost" href="#contact">Poser une question</a></div>
+</div>
+<div class="phones" aria-label="Exemples de style de montage vidéo">
+<figure class="phone"><div class="reel r1"><div class="sub"><span style="--i:0">Fait</span><span style="--i:1">maison</span><span style="--i:2">chaque</span><span style="--i:3">jour</span></div><i class="bar"></i></div><figcaption>Restaurant</figcaption></figure>
+<figure class="phone"><div class="reel r2"><div class="sub"><span style="--i:0">Réservez</span><span style="--i:1">votre</span><span style="--i:2">week-end</span><span style="--i:3">calme</span></div><i class="bar"></i></div><figcaption>Hôtel</figcaption></figure>
+<figure class="phone"><div class="reel r3"><div class="sub"><span style="--i:0">Fabriqué</span><span style="--i:1">ici,</span><span style="--i:2">à la</span><span style="--i:3">main</span></div><i class="bar"></i></div><figcaption>Producteur</figcaption></figure>
+</div>
+</header>
+
+<section id="process" style="padding-top:0">
+<h2>Simple, et 100 % à distance</h2>
+<p class="lead">Tout se fait en ligne, sans déplacement. Basés en Dordogne, nous restons joignables par téléphone si vous préférez en parler d’abord.</p>
+<div class="steps">
+<div class="step"><h3>Vous envoyez</h3><p>Vos photos et vidéos brutes par e-mail, même tournées au téléphone.</p></div>
+<div class="step"><h3>Nous montons</h3><p>Rythme, sous-titres, musique tendance, couleurs et lumière retravaillées.</p></div>
+<div class="step"><h3>Vous publiez</h3><p>Vous recevez des fichiers prêts pour Reels, TikTok et Shorts.</p></div>
+</div>
+</section>
+
+<section id="exemples" style="padding-top:0">
+<h2>Nos réalisations</h2>
+<p class="lead">Des exemples concrets, pour juger du rendu avant de commander.</p>
+<div class="gal" id="gal"></div>
+</section>
+
+<section id="conseils" style="padding-top:0">
+<h2>Bien filmer avec son téléphone</h2>
+<p class="lead">Quatre réflexes qui font la différence, même sans matériel.</p>
+<ul class="tips">
+<li><b>Verticalement</b>Tenez le téléphone à la verticale (9:16), comme pour une story.</li>
+<li><b>Lumière naturelle</b>Près d’une fenêtre ou en extérieur, évitez le contre-jour.</li>
+<li><b>Plans de 5 à 10 s</b>Plusieurs courts plans valent mieux qu’un long plan.</li>
+<li><b>Objectif propre</b>Un coup de chiffon avant de filmer évite le flou.</li>
+</ul>
+</section>
+
+<section id="tarifs" style="padding-top:0">
+<h2>Des tarifs clairs</h2>
+<p class="lead">Prix TTC (TVA 20 % incluse), identiques à ceux affichés sur la page de paiement Stripe. Forfaits uniques : sans abonnement ni renouvellement automatique.</p>
+<div class="packs">
+<div class="pack"><h3>Essentiel</h3><div class="price">300 € <small>TTC</small></div><div class="ht">250 € HT + TVA 20 %</div><div class="what">4 vidéos HD + 5 photos retouchées</div><ul><li>Montage dynamique</li><li>Sous-titres et musique tendance</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/8x200j7cq1NMfxSd9n3840a">Choisir Essentiel</a></div>
+<div class="pack best"><span class="tag">Le plus choisi</span><h3>Pro</h3><div class="price">600 € <small>TTC</small></div><div class="ht">500 € HT + TVA 20 %</div><div class="what">8 vidéos livrées à raison de 2 par semaine + 15 photos retouchées</div><ul><li>Sound design immersif</li><li>Transitions visuelles avancées</li></ul><a class="btn pulse" target="_blank" rel="noopener" href="https://buy.stripe.com/aFa5kD40edwuetO2uJ3840b">Choisir Pro</a></div>
+<div class="pack"><h3>Expert</h3><div class="price">1020 € <small>TTC</small></div><div class="ht">850 € HT + TVA 20 %</div><div class="what">12 vidéos livrées à raison de 3 par semaine + 25 photos retouchées</div><ul><li>Scripts et accroches rédigés avec l’aide de l’IA</li><li>Livraison étalée sur 4 semaines</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/7sYfZh7cqcsqgBW7P33840c">Choisir Expert</a></div>
+</div>
+
+<div class="calc">
+<div><h3>Besoin d’autre chose ?</h3><p style="color:#B9B5D6;margin-top:6px">Composez votre commande : 96 € TTC la vidéo (80 € HT), 18 € TTC la photo (15 € HT).</p></div>
+<div>
+<label for="v"><span>Vidéos</span><b id="vc">1</b></label><input id="v" type="range" min="0" max="20" value="1">
+<label for="p" style="margin-top:14px"><span>Photos</span><b id="pc">0</b></label><input id="p" type="range" min="0" max="40" value="0">
+<div class="tot" id="tot" style="margin-top:14px">96 € TTC</div><div id="ht" style="color:#B9B5D6;margin-bottom:14px">80 € HT + TVA 20 %</div>
+<a class="btn pulse" href="#contact" id="quote">Demander ce devis</a>
+<small>Une seule pièce ? Payez directement : <a target="_blank" rel="noopener" href="https://buy.stripe.com/14A5kDaoCdwuclG9Xb38409">1 vidéo (96 € TTC)</a> · <a target="_blank" rel="noopener" href="https://buy.stripe.com/eVq4gzfIWakibhCb1f38408">1 photo (18 € TTC)</a></small>
+</div>
+</div>
+</section>
+
+<section id="contact" style="padding-top:0">
+<h2>Parlons de votre projet</h2>
+<p class="lead">Écrivez-nous, on vous répond rapidement. Vous pouvez aussi nous envoyer vos fichiers par e-mail.</p>
+<form id="f">
+<input name="nom" placeholder="Votre nom" required autocomplete="name" aria-label="Votre nom">
+<input name="email" type="email" placeholder="Votre e-mail" required autocomplete="email" aria-label="Votre e-mail">
+<textarea name="message" id="m" placeholder="Votre activité, ce que vous souhaitez publier…" required aria-label="Votre message"></textarea>
+<p class="note">Vos données servent uniquement à vous répondre. <a href="#" data-leg="priv">Confidentialité</a></p>
+<button class="btn pulse" type="submit" id="send">Envoyer</button>
+<p id="msg" role="status"></p>
+</form>
+</section>
+</div>
+
+<dialog id="acc" aria-label="Espace client">
+<button class="x" id="close" type="button" aria-label="Fermer">×</button>
+<div id="auth"><h3>Mon espace</h3>
+<div class="tabs"><button type="button" data-t="fin" class="on">Connexion</button><button type="button" data-t="fup">Créer un compte</button><button type="button" data-t="fad">Admin</button></div>
+<form id="fin"><input name="email" type="email" placeholder="Votre e-mail" required autocomplete="email" aria-label="E-mail"><input name="pw" type="password" placeholder="Mot de passe" required autocomplete="current-password" aria-label="Mot de passe"><button class="btn pulse" type="submit">Se connecter</button></form>
+<form id="fup" hidden><input name="email" type="email" placeholder="Votre e-mail" required autocomplete="email" aria-label="E-mail"><input name="pw" type="password" placeholder="Mot de passe (8 caractères min.)" required minlength="8" autocomplete="new-password" aria-label="Mot de passe"><input name="pw2" type="password" placeholder="Confirmez le mot de passe" required minlength="8" autocomplete="new-password" aria-label="Confirmation"><button class="btn pulse" type="submit">Créer mon compte</button></form>
+<form id="fad" hidden><input name="pw" type="password" placeholder="Mot de passe administrateur" required autocomplete="off" aria-label="Mot de passe administrateur"><button class="btn" type="submit">Connexion admin</button></form>
+<p class="am" id="am" role="status"></p></div>
+<div id="space" hidden></div>
+</dialog>
+
+<footer><div class="wrap">LocalPulse Digital, Dordogne (24120) · <a href="mailto:youcefbenbrahim253@gmail.com">youcefbenbrahim253@gmail.com</a> · © 2026 Tous droits réservés. Paiements sécurisés via Stripe.<br><span id="sir"></span> · <a href="#" data-leg="ment">Mentions légales</a> · <a href="#" data-leg="cgv">CGV</a> · <a href="#" data-leg="priv">Confidentialité</a></div></footer>
+
+<dialog id="leg" class="big" aria-label="Informations légales"><button class="x" id="lx" type="button" aria-label="Fermer">×</button><div class="leg" id="lc"></div></dialog>
+
+<script>
+// ===== À COMPLÉTER =====
+const SIRET = "131 386 583 00010";   // remplacez par votre SIRET (14 chiffres)
+const TVA_TXT = "TVA 20 % applicable"; // si franchise en base : "TVA non applicable, art. 293 B du CGI"
+// Vos réalisations : ajoutez {titre:"…", legende:"…", src:"videos/exemple1.mp4"} (fichiers à mettre dans le dépôt)
+const REALISATIONS = [];
+// ========================
+
+// Réception des messages par e-mail (Formspree)
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwlvqrrg";
+
+const v=document.getElementById('v'), p=document.getElementById('p');
+function calc(){
+  document.getElementById('vc').textContent=v.value;
+  document.getElementById('pc').textContent=p.value;
+  const ht=v.value*80+p.value*15, f=n=>n.toLocaleString('fr-FR',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})+' €';
+  document.getElementById('tot').textContent=f(ht*1.2)+' TTC';
+  document.getElementById('ht').textContent=f(ht)+' HT + TVA 20 %';
+}
+v.oninput=p.oninput=calc;
+document.getElementById('quote').onclick=function(){
+  if(+v.value+ +p.value>0) document.getElementById('m').value='Bonjour, je souhaite un devis pour '+v.value+' vidéo(s) et '+p.value+' photo(s) ('+((v.value*80+p.value*15)*1.2).toFixed(2).replace('.',',')+' € TTC).\n';
+};
+
+document.getElementById('f').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('send'), out=document.getElementById('msg'), d=new FormData(this);
+  btn.disabled=true; out.textContent='Envoi en cours…';
+  try{
+    const r=await fetch(FORMSPREE_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({_subject:'[LocalPulse] Message de '+d.get('nom'),nom:d.get('nom'),email:d.get('email'),message:d.get('message')})});
+    if(!r.ok) throw new Error();
+    this.reset(); out.textContent='Message envoyé. Nous vous répondons très vite.';
+  }catch(err){
+    out.textContent='L’envoi a échoué. Écrivez-nous directement à youcefbenbrahim253@gmail.com.';
+  }
+  btn.disabled=false;
+});
+
+// ===== Espace client / admin (version navigateur) =====
+const AH="05a34bfbff8c500fccb756d3a4eeac685b148a78cbdbf117ea76c2b0535318a7", K='lp_users', S='lp_session';
+const $=id=>document.getElementById(id), dlg=$('acc');
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const users=()=>{try{return JSON.parse(localStorage.getItem(K))||[]}catch(e){return[]}};
+const save=u=>localStorage.setItem(K,JSON.stringify(u));
+const sess=()=>{try{return JSON.parse(localStorage.getItem(S))}catch(e){return null}};
+async function hash(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function say(t){$('am').textContent=t}
+function render(){
+  const s=sess(), sp=$('space');
+  $('auth').hidden=!!s; sp.hidden=!s; $('open').textContent=s?(s.role==='admin'?'Admin ✓':'Mon espace ✓'):'Mon espace';
+  if(!s) return;
+  if(s.role==='admin'){
+    const u=users();
+    sp.innerHTML='<h3>Espace admin</h3><p>'+u.length+' compte(s) client(s) :</p><ul class="ul">'+(u.map((x,i)=>'<li><span>'+esc(x.email)+' <small>('+new Date(x.date).toLocaleDateString('fr-FR')+')</small></span><button data-d="'+i+'" type="button">Supprimer</button></li>').join('')||'<li>Aucun compte pour le moment.</li>')+'</ul><button class="btn ghost" id="out" type="button">Se déconnecter</button>';
+    sp.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const u=users();u.splice(+b.dataset.d,1);save(u);render()});
+  }else{
+    sp.innerHTML='<h3>Bonjour 👋</h3><p>Connecté en tant que <b>'+esc(s.email)+'</b>.</p><p style="color:var(--mute);margin:10px 0 18px">Choisissez une offre ou écrivez-nous pour votre projet.</p><div class="cta"><a class="btn pulse" href="#tarifs" id="go">Voir les tarifs</a><button class="btn ghost" id="out" type="button">Se déconnecter</button></div>';
+    $('go').onclick=()=>dlg.close();
+  }
+  $('out').onclick=()=>{localStorage.removeItem(S);render()};
+}
+$('open').onclick=()=>{say('');render();dlg.showModal()};
+$('close').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  ['fin','fup','fad'].forEach(id=>$(id).hidden=id!==b.dataset.t); say('');
+});
+$('fup').addEventListener('submit',async function(e){
+  e.preventDefault(); const d=new FormData(this), em=d.get('email').trim().toLowerCase();
+  if(d.get('pw')!==d.get('pw2')) return say('Les mots de passe ne sont pas identiques.');
+  const u=users(); if(u.some(x=>x.email===em)) return say('Un compte existe déjà avec cet e-mail.');
+  u.push({email:em,pw:await hash(em+':'+d.get('pw')),date:Date.now()}); save(u);
+  localStorage.setItem(S,JSON.stringify({role:'client',email:em})); this.reset(); render();
+});
+$('fin').addEventListener('submit',async function(e){
+  e.preventDefault(); const d=new FormData(this), em=d.get('email').trim().toLowerCase(), p=await hash(em+':'+d.get('pw'));
+  if(!users().some(x=>x.email===em&&x.pw===p)) return say('E-mail ou mot de passe incorrect.');
+  localStorage.setItem(S,JSON.stringify({role:'client',email:em})); this.reset(); render();
+});
+$('fad').addEventListener('submit',async function(e){
+  e.preventDefault(); const p=await hash('admin:'+new FormData(this).get('pw').replace(/\s/g,'').toLowerCase());
+  if(p!==AH) return say('Mot de passe incorrect.');
+  localStorage.setItem(S,JSON.stringify({role:'admin'})); this.reset(); render();
+});
+
+// Onglet Admin masqué (accessible via l'adresse du site + #admin)
+if(location.hash!=='#admin') document.querySelector('[data-t="fad"]').hidden=true;
+
+// Réalisations
+(function(){
+  const g=document.getElementById('gal');
+  if(REALISATIONS.length){
+    g.innerHTML=REALISATIONS.map(r=>'<figure><video src="'+esc(r.src)+'" controls playsinline preload="metadata" aria-label="'+esc(r.titre)+'"></video><figcaption><b>'+esc(r.titre)+'</b><br>'+esc(r.legende||'')+'</figcaption></figure>').join('');
+  }else{
+    g.style.display='block';
+    g.innerHTML='<div class="launch"><h3>Offre de lancement</h3><p>Nous construisons notre portfolio avec des commerces de Dordogne. Les premiers projets sont réalisés à tarif réduit, voire offerts, en échange d’un court témoignage. Votre vidéo pourrait être la première ici.</p><a class="btn pulse" href="#contact" id="lp">Je veux en profiter</a></div>';
+    document.getElementById('lp').onclick=()=>{document.getElementById('m').value='Bonjour, je suis intéressé(e) par l’offre de lancement. Mon activité : ';};
+  }
+})();
+
+// Mentions légales, CGV, confidentialité
+document.getElementById('sir').textContent='Yannick Benbrahim, entrepreneur individuel · SIRET '+SIRET+' · '+TVA_TXT;
+const LEG={
+ment:'<h3>Mentions légales</h3><p><b>Éditeur :</b> Yannick Benbrahim, entrepreneur individuel (LocalPulse Digital), Dordogne (24120).</p><p><b>SIRET :</b> '+SIRET+'</p><p><b>TVA :</b> '+TVA_TXT+'</p><p><b>Contact :</b> youcefbenbrahim253@gmail.com</p><p><b>Directeur de la publication :</b> Yannick Benbrahim</p><p><b>Hébergement :</b> GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis).</p><p><b>Paiement :</b> Stripe, qui traite seul vos données bancaires.</p>',
+cgv:'<h3>Conditions générales de vente</h3><p><b>Objet.</b> Montage de vidéos verticales et retouche de photos à partir des fichiers fournis par le client.</p><p><b>Prix.</b> Prix en euros TTC affichés sur le site. Forfaits uniques, sans abonnement ni renouvellement automatique.</p><p><b>Commande et paiement.</b> Paiement en ligne par Stripe à la commande. Le travail démarre après réception du paiement et des fichiers.</p><p><b>Livraison.</b> Fichiers livrés par e-mail ou lien de téléchargement, selon le rythme indiqué dans la formule choisie.</p><p><b>Droits.</b> Le client garantit disposer des droits sur les contenus qu’il envoie. Il peut utiliser les fichiers livrés pour la communication de son activité.</p><p><b>Rétractation.</b> Pour un consommateur, délai légal de 14 jours ; si l’exécution commence à sa demande avant la fin de ce délai, il renonce à ce droit une fois le service pleinement exécuté. Aucun droit de rétractation pour un client professionnel dans son domaine d’activité.</p><p><b>Litiges.</b> Droit français. Contactez-nous d’abord pour une solution amiable.</p>',
+priv:'<h3>Confidentialité</h3><p><b>Formulaire de contact.</b> Nom, e-mail et message sont transmis par Formspree et utilisés uniquement pour répondre à votre demande, puis conservés le temps nécessaire à ce suivi.</p><p><b>Espace client.</b> Les comptes sont enregistrés uniquement dans votre navigateur ; nous n’y avons pas accès à distance.</p><p><b>Paiement.</b> Géré par Stripe ; nous ne voyons jamais vos données bancaires.</p><p><b>Vos droits.</b> Accès, rectification, suppression : écrivez à youcefbenbrahim253@gmail.com. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>'};
+document.querySelectorAll('[data-leg]').forEach(a=>a.onclick=e=>{e.preventDefault();document.getElementById('lc').innerHTML=LEG[a.dataset.leg];document.getElementById('leg').showModal()});
+document.getElementById('lx').onclick=()=>document.getElementById('leg').close();
+document.getElementById('leg').addEventListener('click',e=>{if(e.target.id==='leg')e.target.close()});
+render();
+</script>
+</body>
+</html>
